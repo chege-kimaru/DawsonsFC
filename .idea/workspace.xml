@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fced7445-e893-4cc8-92fc-05330dcf43e2" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1akh4HISbCuU7yKLGqb3Pp3JFQn" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\img" />
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\api" />
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\js" />
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\api\config" />
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\admin\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fced7445-e893-4cc8-92fc-05330dcf43e2" name="Default Changelist" comment="" />
+      <created>1587285305191</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587285305191</updated>
+      <workItem from="1587285307082" duration="5014000" />
+      <workItem from="1587306742911" duration="19374000" />
+      <workItem from="1587369879426" duration="123000" />
+      <workItem from="1587371079278" duration="22850000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
