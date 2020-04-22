@@ -30,104 +30,18 @@
                             <tr>
                                 <th class="th-o">Pos</th>
                                 <th>Team</th>
-                                <th class="th-o">P</th>
+                                <th class="th-o">M</th>
                                 <th class="th-o">W</th>
                                 <th class="th-o">L</th>
+                                <th class="th-o">D</th>
+                                <th class="th-o">GD</th>
                                 <th class="th-o">PTS</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-1.jpg" alt="">
-                                    <span>Afghanis</span>
-                                </td>
-                                <td>22</td>
-                                <td>2</td>
-                                <td>5</td>
-                                <td>72</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-2.jpg" alt="">
-                                    <span>Australia</span>
-                                </td>
-                                <td>20</td>
-                                <td>3</td>
-                                <td>4</td>
-                                <td>71</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-3.jpg" alt="">
-                                    <span>Qatar</span>
-                                </td>
-                                <td>18</td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td>68</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-4.jpg" alt="">
-                                    <span>Cambodia</span>
-                                </td>
-                                <td>17</td>
-                                <td>2</td>
-                                <td>7</td>
-                                <td>64</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-5.jpg" alt="">
-                                    <span>Uzbekistan</span>
-                                </td>
-                                <td>17</td>
-                                <td>2</td>
-                                <td>6</td>
-                                <td>60</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-6.jpg" alt="">
-                                    <span>Turkme</span>
-                                </td>
-                                <td>161</td>
-                                <td>1</td>
-                                <td>8</td>
-                                <td>57</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-7.jpg" alt="">
-                                    <span>Sri Lanka</span>
-                                </td>
-                                <td>15</td>
-                                <td>4</td>
-                                <td>8</td>
-                                <td>52</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td class="team-name">
-                                    <img src="img/flag/flag-8.jpg" alt="">
-                                    <span>Myanmar</span>
-                                </td>
-                                <td>14</td>
-                                <td>3</td>
-                                <td>7</td>
-                                <td>48</td>
-                            </tr>
+                            <tbody id="standings">
+
                             </tbody>
                         </table>
-                        <a href="#" class="p-all">View All</a>
                     </div>
                 </div>
             </div>
@@ -141,10 +55,104 @@
 <?php include_once '_scripts.php' ?>
 
 <script>
+    const standings = [];
+
+    const generateStandings = (clubs, fixtures) => {
+        clubs.forEach(club => {
+            const standing = {club};
+            const clubFixtures = fixtures.filter(fixture => {
+                return +fixture.match_played === 1 && (fixture.home_id === club.id || fixture.away_id === club.id);
+            });
+            let matches = 0, draws = 0, wins = 0, loses = 0, gd = 0, points = 0;
+            clubFixtures.forEach(f => {
+                if (f.home_id === club.id) {
+                    if (+f.goals_home > +f.goals_away) {
+                        wins++;
+                        gd += (+f.goals_home - +f.goals_away);
+                        points += 3;
+                    } else if (+f.goals_home < +f.goals_away) {
+                        loses++;
+                        gd += (+f.goals_home - +f.goals_away);
+                    } else {
+                        draws++;
+                        points += 1;
+                    }
+                } else {
+                    if (+f.goals_home > +f.goals_away) {
+                        loses++;
+                        gd += (+f.goals_home - +f.goals_away);
+                    } else if (+f.goals_home < +f.goals_away) {
+                        wins++;
+                        gd += (+f.goals_home - +f.goals_away);
+                        points += 3;
+                    } else {
+                        draws++;
+                        points += 1;
+                    }
+                }
+                matches++;
+            });
+            standing.matches = matches;
+            standing.draws = draws;
+            standing.wins = wins;
+            standing.loses = loses;
+            standing.gd = gd;
+            standing.points = points;
+            standings.push(standing);
+        });
+        standings.sort((a, b) => {
+           if(a.points === b.points) return b.gd - a.gd;
+           return b.points - a.points;
+        });
+    };
+
+    const displayStandings = () => {
+        $('#standings').empty();
+        let i = 0;
+        standings.forEach(standing => {
+            i++;
+            $('#standings').append(`
+                <tr>
+                    <td>${i}</td>
+                    <td class="team-name">
+                        <img src="http://localhost/DawsonsFC/${standing.club.image}" alt="">
+                        <span>${standing.club.name}</span>
+                    </td>
+                    <td>${standing.matches}</td>
+                    <td>${standing.wins}</td>
+                    <td>${standing.loses}</td>
+                    <td>${standing.draws}</td>
+                    <td>${standing.gd}</td>
+                    <td>${standing.points}</td>
+                </tr>
+            `);
+        });
+    };
+
+    const getData = async () => {
+        try {
+            let res = await axios.get('http://localhost/DawsonsFc/api/fixture.php');
+            const fixtures = res.data;
+
+            res = await axios.get('http://localhost/DawsonsFc/api/club.php');
+            const clubs = res.data;
+
+            generateStandings(clubs, fixtures);
+            displayStandings();
+
+            $(".loader").fadeOut();
+            $("#preloder").delay(200).fadeOut("slow");
+        } catch (error) {
+            $(".loader").fadeOut();
+            $("#preloder").delay(200).fadeOut("slow");
+            console.error(error);
+            alert('Could not get fixtures');
+        }
+    };
+
     $(document).ready(() => {
-        $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
-    })
+        getData();
+    });
 </script>
 </body>
 </html>

@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="fced7445-e893-4cc8-92fc-05330dcf43e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_head.php" beforeDir="false" afterPath="$PROJECT_DIR$/_head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/club.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/club.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/clubs.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/clubs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/fixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/fixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/stadiums.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/stadiums.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/dawsonsfc.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/standing.php" beforeDir="false" afterPath="$PROJECT_DIR$/standing.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,18 +46,18 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/config" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\api\config" />
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\admin" />
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC" />
       <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\img" />
       <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\api" />
-      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\js" />
-      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\api\config" />
-      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC\admin\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\PHP\Bitnami\wampstack-7.1.16-0-0\apache2\htdocs\DawsonsFC" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -77,6 +86,9 @@
       <workItem from="1587306742911" duration="19374000" />
       <workItem from="1587369879426" duration="123000" />
       <workItem from="1587371079278" duration="23380000" />
+      <workItem from="1587398945286" duration="1961000" />
+      <workItem from="1587486224802" duration="579000" />
+      <workItem from="1587534968377" duration="7698000" />
     </task>
     <servers />
   </component>
@@ -88,10 +100,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/admin/_nav.php</url>
+          <line>69</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

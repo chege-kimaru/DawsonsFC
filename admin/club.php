@@ -1,4 +1,4 @@
-<?php $title = 'Players'; ?>
+<?php include_once '_session.php';  $title = 'Players'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

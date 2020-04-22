@@ -1,4 +1,6 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;">
+    <div id="php"></div>
+
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -42,16 +44,31 @@
                     <a href="stadiums.php">Stadiums</a>
                 </li>
                 <li>
-                    <a href="#">Players</a>
+                    <a href="change-password.php">Change Password</a>
                 </li>
                 <li>
-                    <a href="#">Change Password</a>
-                </li>
-                <li>
-                    <a href="#">Log out</a>
+                    <a onclick="logout()">Log out</a>
                 </li>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
     </div>
 </nav>
+
+<script>
+    const logout = () => {
+        location.href = `${location.href}?logout=logout`;
+    };
+</script>
+
+<?php
+if (isset($_GET['logout'])) {
+    logout();
+}
+function logout()
+{
+    unset($_SESSION['username']);
+    header('Location: login.php');
+}
+
+?>

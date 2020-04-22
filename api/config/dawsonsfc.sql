@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 20, 2020 at 08:27 AM
+-- Generation Time: Apr 22, 2020 at 01:05 AM
 -- Server version: 5.7.21
 -- PHP Version: 7.1.16
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `dawsonsfc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `username`, `password`) VALUES
+(1, 'admin', '$2y$10$Hxj3Lib8gYVW/OCnWtET8eLfz/sAUsIKZHSC0XWA/JBhew3CzyCm2');
 
 -- --------------------------------------------------------
 
@@ -146,6 +165,13 @@ INSERT INTO `stadiums` (`id`, `name`, `location`, `image`) VALUES
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- Indexes for table `clubs`
 --
 ALTER TABLE `clubs`
@@ -176,6 +202,12 @@ ALTER TABLE `stadiums`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `clubs`

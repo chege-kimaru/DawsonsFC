@@ -1,4 +1,4 @@
-<?php $title = 'Stadiums'; ?>
+<?php include_once '_session.php'; $title = 'Stadiums'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

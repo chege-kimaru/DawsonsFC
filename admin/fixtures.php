@@ -1,4 +1,4 @@
-<?php $title = 'Fixtures'; ?>
+<?php include_once '_session.php'; $title = 'Fixtures'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

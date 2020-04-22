@@ -29,7 +29,7 @@
                     <ul class="fw-links">
                         <li><a href="clubs.php">Clubs</a></li>
                         <li><a href="result.php">Results</a></li>
-                        <li><a href="schedule.php">Schedule.php</a></li>
+                        <li><a href="schedule.php">Schedule</a></li>
                         <li><a href="standing.php">Standing</a></li>
                     </ul>
                 </div>
