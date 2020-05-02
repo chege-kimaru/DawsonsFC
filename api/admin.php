@@ -19,7 +19,10 @@ try {
     $admin = new Admin($db);
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $admin->id = $_POST['id'];
         $admin->username = $_POST['username'];
+        $admin->email = $_POST['email'];
+        $admin->role = $_POST['role'];
         $admin->password = $_POST['password'];
 
         if ($_GET['type'] === 'register') {
@@ -29,16 +32,17 @@ try {
             echo json_encode(array('data' => 'Successfully added admin'));
             exit;
         } else if ($_GET['type'] === 'login') {
-            if($admin->login()) {
+            $res = $admin->login();
+            if ($res) {
                 http_response_code(200);
-                echo json_encode(array('data' => 'Successfully signed in'));
+                echo json_encode($res);
             } else {
                 http_response_code(401);
                 echo json_encode(array('data' => 'Wrong username or password'));
             }
             exit;
         } else if ($_GET['type'] === 'change-password') {
-            if($admin->login()) {
+            if ($admin->login()) {
                 $admin->changePassword($_POST['newPassword']);
                 http_response_code(200);
                 echo json_encode(array('data' => 'Successfully changed password'));
@@ -46,7 +50,16 @@ try {
                 http_response_code(401);
                 echo json_encode(array('data' => 'Wrong username or password'));
             }
+            exit;
+        } else if ($_GET['type'] === 'change-role') {
+            $admin->changeRole();
+            http_response_code(200);
+            echo json_encode(array('data' => 'Successfully changed role'));
+            exit;
         }
+    } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        http_response_code(200);
+        echo json_encode($admin->getAdmins());
     }
 
 

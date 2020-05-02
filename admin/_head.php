@@ -47,4 +47,7 @@
         }
     </style>
 
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
 </head>

@@ -50,6 +50,8 @@
                             </li>
                             <li class="<?php $active === 'clubs' ? print 'active' : print  ''; ?>"><a href="clubs.php">clubs</a>
                             </li>
+                            <li><a href="admin/login.php"><i class="fa fa-user"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>

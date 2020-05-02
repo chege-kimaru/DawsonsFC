@@ -1,11 +1,4 @@
-<?php
-session_start();
-if (isset($_SESSION['username'])) {
-    header('Location: index.php');
-}
-?>
-
-<?php $title = 'Login'; ?>
+<?php $title = 'Register'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,18 +16,18 @@ if (isset($_SESSION['username'])) {
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Please Sign In</h3>
+                    <h3 class="panel-title">Sign Up</h3>
                 </div>
                 <div class="panel-body">
                     <div class="alert alert-success" id="loginAlertSuccess" style="display: none">
                         <a href="#" class="close" data-dismiss="alert"
                            aria-label="close">&times;</a>
-                        <p>Successfully Logged In</p>
+                        <p>Successfully Signed up. Please login to continue.</p>
                     </div>
                     <div class="alert alert-danger" id="loginAlertDanger" style="display: none">
                         <a href="#" class="close" data-dismiss="alert"
                            aria-label="close">&times;</a>
-                        <p>Wrong Credentials. Please try again.</p>
+                        <p>Could not sign you up, please try again.</p>
                     </div>
                     <form role="form" id="loginForm">
                         <fieldset>
@@ -43,13 +36,21 @@ if (isset($_SESSION['username'])) {
                                        autofocus>
                             </div>
                             <div class="form-group">
+                                <input id="email" class="form-control" placeholder="Email" name="email" type="email"
+                                       autofocus>
+                            </div>
+                            <div class="form-group">
                                 <input id="password" class="form-control" placeholder="Password" name="password"
                                        type="password" value="">
                             </div>
+                            <div class="form-group">
+                                <input id="r-password" class="form-control" placeholder="Password" name="r-password"
+                                       type="password" value="">
+                            </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+                            <button type="submit" class="btn btn-lg btn-success btn-block">Sign Up</button>
 
-                            <p style="padding: 1rem">No Account? <a href="register.php">Register</a></p>
+                            <p style="padding: 1rem">Have an account? <a href="login.php">Login</a></p>
                         </fieldset>
                     </form>
                     <br>
@@ -65,16 +66,16 @@ if (isset($_SESSION['username'])) {
     $(document).ready(() => {
         $('#loginForm').submit(e => {
             e.preventDefault();
+            if($('#password').val() !== $('#r-password').val()) {
+                alert('Passwords do not match');
+                return;
+            }
             $('#requestOverlay').show();
-            axios.post(`http://localhost/DawsonsFc/api/admin.php?type=login`, new FormData($('#loginForm')[0]))
+            axios.post(`http://localhost/DawsonsFc/api/admin.php?type=register`, new FormData($('#loginForm')[0]))
                 .then(res => {
                     $('#requestOverlay').hide();
-                    sessionStorage.setItem('user', JSON.stringify(res.data));
-                    if(+res.data.role <= 2){
-                        location.href = 'index.php';
-                    } else {
-                        location.href = '../index.php';
-                    }
+                    $('#loginAlertSuccess').show();
+                    setTimeout(() => location.href = 'login.php', 2000)
                 })
                 .catch(e => {
                     $('#requestOverlay').hide();

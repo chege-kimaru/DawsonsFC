@@ -3,15 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="fced7445-e893-4cc8-92fc-05330dcf43e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/_footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_head.php" beforeDir="false" afterPath="$PROJECT_DIR$/_head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/_header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/_head.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/_scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_scripts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/_session.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/_session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/change-password.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/change-password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/club.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/club.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/clubs.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/clubs.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/fixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/fixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/stadiums.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/stadiums.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/config/dawsonsfc.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/standing.php" beforeDir="false" afterPath="$PROJECT_DIR$/standing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/Admin.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -88,7 +93,8 @@
       <workItem from="1587371079278" duration="23380000" />
       <workItem from="1587398945286" duration="1961000" />
       <workItem from="1587486224802" duration="579000" />
-      <workItem from="1587534968377" duration="7698000" />
+      <workItem from="1587534968377" duration="9010000" />
+      <workItem from="1588399926452" duration="7280000" />
     </task>
     <servers />
   </component>
@@ -107,16 +113,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/admin/_nav.php</url>
-          <line>69</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 22, 2020 at 01:05 AM
+-- Generation Time: May 02, 2020 at 02:13 AM
 -- Server version: 5.7.21
 -- PHP Version: 7.1.16
 
@@ -31,15 +31,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `admins` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `role` int(11) NOT NULL DEFAULT '3',
+  `email` varchar(255) NOT NULL DEFAULT 'admin@gmail.com'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$Hxj3Lib8gYVW/OCnWtET8eLfz/sAUsIKZHSC0XWA/JBhew3CzyCm2');
+INSERT INTO `admins` (`id`, `username`, `password`, `role`, `email`) VALUES
+(3, 'admin', '$2y$10$6IOKRRMEk0a6BTHiC/wtlO.klxZkgW.BxLPfLfOZ2H2.BZnf86ax2', 1, 'admin@gmail.com'),
+(4, 'kevin', '$2y$10$4rOby8IeldKtDp3x6aH1TuD5lXsrIFPquf9fgkgRgXrxgvAePFocy', 2, 'kevin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -70,7 +73,8 @@ INSERT INTO `clubs` (`id`, `name`, `location`, `image`, `stadium_id`, `coach`, `
 (7, 'Brokas', 'Lockey', 'api/public/1587392604-bayern.png', 7, 'Martin N', 2003, 'Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division,[3] and have won the second-most top-flight matches in English football history.[4] In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.[5]'),
 (8, 'Vallon FC', 'Vallap Estate', 'api/public/1587392648-club4.jpg', 5, 'Nickosa Martin', 2009, 'Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division,[3] and have won the second-most top-flight matches in English football history.[4] In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.[5]'),
 (9, 'PaperFC', 'Luthuli', 'api/public/1587392933-eagles.png', 9, 'Kris Eric', 2003, 'Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division,[3] and have won the second-most top-flight matches in English football history.[4] In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.[5]'),
-(10, 'Eightees', 'Nairobi', 'api/public/1587392994-sfc.png', 7, 'Elly Martin', 2003, 'Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division,[3] and have won the second-most top-flight matches in English football history.[4] In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.[5]');
+(10, 'Eightees', 'Nairobi', 'api/public/1587392994-sfc.png', 7, 'Elly Martin', 2003, 'Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division,[3] and have won the second-most top-flight matches in English football history.[4] In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.[5]'),
+(11, 'CET333', 'Nairobi', 'api/public/1587808685-kings.png', 5, 'Dawson', 2019, 'Arsenal was the first club from the South of England to join The Football League, in 1893, and they reached the First Division in 1904. Relegated only once, in 1913, they continue the longest streak in the top division,[3] and have won the second-most top-flight matches in English football history.[4] In the 1930s, Arsenal won five League Championships and two FA Cups, and another FA Cup and two Championships after the war. In 1970–71, they won their first League and FA Cup Double. Between 1989 and 2005, they won five League titles and five FA Cups, including two more Doubles. They completed the 20th century with the highest average league position.[5]');
 
 -- --------------------------------------------------------
 
@@ -169,7 +173,8 @@ INSERT INTO `stadiums` (`id`, `name`, `location`, `image`) VALUES
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `clubs`
@@ -207,13 +212,13 @@ ALTER TABLE `stadiums`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `clubs`
 --
 ALTER TABLE `clubs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `fixtures`

@@ -1,5 +1,3 @@
-<!-- jQuery -->
-<script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/jquery/jquery.cookie.js"></script>
 
 <!-- Bootstrap Core JavaScript -->

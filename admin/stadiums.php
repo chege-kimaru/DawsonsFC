@@ -1,11 +1,10 @@
-<?php include_once '_session.php'; $title = 'Stadiums'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <?php include_once '_head.php'; ?>
 
 <body>
+<script src="js/auth.js"></script>
 
 <div id="wrapper">
 
@@ -109,7 +108,7 @@
                 <td>${stadium.location}</td>
                 <td>
                     <button onclick="openFormModal('update')" class="btn btn-info"><i class="fa fa-pencil-square"></i></button>
-                    <button onclick="deleteStadium(''${stadium.id})" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                    <button onclick="deleteStadium('${stadium.id}')" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                 </td>
             </tr>
         `

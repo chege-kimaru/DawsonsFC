@@ -43,6 +43,9 @@
                 <li>
                     <a href="stadiums.php">Stadiums</a>
                 </li>
+                <li class="users-nav" style="display: none">
+                    <a href="users.php">Users</a>
+                </li>
                 <li>
                     <a href="change-password.php">Change Password</a>
                 </li>
@@ -57,18 +60,11 @@
 
 <script>
     const logout = () => {
-        location.href = `${location.href}?logout=logout`;
+        location.href = 'login.php';
     };
+    if(+USER.role === 1) {
+        $('.users-nav').show();
+    } else {
+        $('.users-nav').hide();
+    }
 </script>
-
-<?php
-if (isset($_GET['logout'])) {
-    logout();
-}
-function logout()
-{
-    unset($_SESSION['username']);
-    header('Location: login.php');
-}
-
-?>

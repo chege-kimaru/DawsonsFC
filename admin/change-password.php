@@ -6,6 +6,7 @@
 <?php include_once '_head.php';?>
 
 <body>
+<script src="js/auth.js"></script>
 
 <div id="wrapper">
 
